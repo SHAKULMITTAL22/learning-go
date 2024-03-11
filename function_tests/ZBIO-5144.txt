@@ -1,0 +1,69 @@
+TECHNOLOGY STACK
+
+* Test framework/platform used can be Jest and React Testing Library
+* The application is developed using React JS
+* DevOps is Jenkins pipeline
+* CI/CD model preferred is Jenkins 
+
+TESTING TYPES IN SCOPE
+
+* Functional, Unit, Integration
+
+PoC TRACKS
+
+Track 1- Existing Applications:
+
+* Repository details – will be provided by the team. This would include source code and pointer to, requirements, any logs
+
+Track 1- Green Field development
+
+* Functionality of our choice. We can pick the area of User Registration
+* Enable TDD by first delivering  Functional Test Cases from Requirements, then include Source Code to deliver test specs generation – enriched now with what is in the source code
+
+
+FUNCTIONAL TEST CASE:
+Functional Test Cases:
+--------------------------
+
+1. Test Case: Verify the functionality of the User Registration component.
+   - Input: Render the User Registration component
+   - Expected Output: User Registration component should be rendered correctly with the expected layout and input fields.
+   - Edge Case: User Registration component should handle invalid or unexpected user inputs and return appropriate error messages.
+
+Non-Functional Test Cases:
+-----------------------------
+
+1. Test Case: Verify the performance of the User Registration component.
+   - Input: Render the User Registration component
+   - Expected Output: User Registration component should render quickly without any noticeable delay.
+   - Edge Case: User Registration component should handle high traffic and not crash.
+
+2. Test Case: Verify the usability of the User Registration component.
+   - Input: User interactions with the User Registration component
+   - Expected Output: User Registration component should be user-friendly and easy to navigate.
+   - Edge Case: User Registration component should handle user errors gracefully with clear and informative error messages.
+
+3. Test Case: Verify the security of the User Registration component.
+   - Input: User interactions with the User Registration component
+   - Expected Output: User Registration component should not expose sensitive data and should have measures to prevent unauthorized access.
+   - Edge Case: User Registration component should handle malicious attacks such as Cross-site scripting (XSS), etc.
+
+4. Test Case: Verify the compatibility of the User Registration component.
+   - Input: Render the User Registration component on different browsers and devices
+   - Expected Output: User Registration component should render correctly on all supported browsers and devices.
+   - Edge Case: User Registration component should handle any incompatibilities gracefully with clear and informative error messages.
+
+GHERKIN FILE :
+Feature: React JS Components Testing
+  As a QA engineer
+  I want to test each React JS component
+  So that I can ensure the application is working as expected
+
+Scenario Outline: Test React JS Component
+  Given I have a "<component>" to test
+  When I render the "<component>"
+  Then the "<component>" should render without errors
+
+Examples:
+  | component   |
+  | "User Registration" |
