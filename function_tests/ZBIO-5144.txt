@@ -1,0 +1,50 @@
+Functional Test Cases:
+--------------------------
+
+1. Test Case for Repository Details:
+   - Input: Repository details provided by the HSBC team including source code and requirements.
+   - Expected Result: The repository details should be correctly read and understood by the system, and the source code should compile without errors.
+   - Edge Case: Test with invalid or incomplete repository details.
+
+2. Test Case for API Integration:
+   - Input: APIs exposed at the HSBC Developer Portal.
+   - Expected Result: The APIs should be accessible and return the correct responses as per the API specifications.
+   - Edge Case: Test with invalid API endpoints or APIs that are not available.
+
+3. Test Case for Cards – Collections & Recovery Functionality:
+   - Input: Actions related to Cards – Collections & Recovery functionality.
+   - Expected Result: The actions should be executed correctly, and the system should respond as per the requirements.
+   - Edge Case: Test with invalid actions or data.
+
+4. Test Case for TDD:
+   - Input: Functional Test Cases from Requirements and Source Code.
+   - Expected Result: The system should be able to generate test specs based on the functional test cases and source code.
+   - Edge Case: Test with incomplete or invalid functional test cases or source code.
+
+Non-Functional Test Cases:
+------------------------------
+
+1. Test Case for System Performance:
+   - Input: High load or stress conditions.
+   - Expected Result: The system should be able to handle high loads or stress conditions without significant performance degradation.
+   - Edge Case: Test with extremely high loads or stress conditions that exceed the system's capacity.
+
+2. Test Case for API Response Time:
+   - Input: API requests.
+   - Expected Result: The APIs should return responses within an acceptable time frame as per the API specifications.
+   - Edge Case: Test with large amounts of data that may slow down the response time.
+
+3. Test Case for System Security:
+   - Input: Various security threats or attacks.
+   - Expected Result: The system should be able to withstand various security threats or attacks without compromising the system's integrity.
+   - Edge Case: Test with sophisticated security threats or attacks that may bypass common security measures.
+
+4. Test Case for System Availability:
+   - Input: Various operating conditions.
+   - Expected Result: The system should be available for use under various operating conditions.
+   - Edge Case: Test with extreme operating conditions that may cause the system to be unavailable. 
+
+5. Test Case for Mockito Virtualisation:
+   - Input: Dependencies that need to be virtualised/mocked.
+   - Expected Result: Mockito should be able to correctly virtualise/mock the dependencies.
+   - Edge Case: Test with complex dependencies that may be difficult to virtualise/mock.
