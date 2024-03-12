@@ -1,0 +1,33 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: 'API Endpoint Testing'
+  description: 'API specification for endpoint validation'
+host: 'api.example.com'
+schemes:
+  - 'https'
+basePath: '/v1'
+produces:
+  - 'application/json'
+paths:
+  /correct-endpoint:
+    get:
+      summary: 'Send request to the correct API endpoint'
+      description: 'This endpoint is to validate that the correct API endpoint returns a 200 status code'
+      responses:
+        '200':
+          description: 'Successful response'
+  /incorrect-endpoint:
+    get:
+      summary: 'Send request to the incorrect API endpoint'
+      description: 'This endpoint is to validate that an incorrect API endpoint returns a 404 status code'
+      responses:
+        '404':
+          description: 'Endpoint not found'
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+security:
+  - Bearer: []
