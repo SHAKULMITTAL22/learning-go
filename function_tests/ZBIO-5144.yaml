@@ -1,0 +1,35 @@
+openapi: 3.0.0
+info:
+  title: API Endpoint Testing
+  version: 1.0.0
+servers:
+  - url: 'http://api.example.com'
+paths:
+  /correct-endpoint:
+    get:
+      summary: Get request for the correct endpoint
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Successful message
+  /incorrect-endpoint:
+    get:
+      summary: Get request for the incorrect endpoint
+      responses:
+        '404':
+          description: Endpoint not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
