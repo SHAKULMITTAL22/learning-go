@@ -1,0 +1,34 @@
+FUNCTIONAL TEST CASES:
+
+1. Test Case: Verify fetching credit card details
+   - Input: Valid credit card number
+   - Expected Output: Status code 200, Credit card details including due date and balance
+   - Edge Case: Invalid credit card number, Expected Output: Status code 400, Error message "Invalid credit card details provided"
+
+2. Test Case: Verify arranging a call if balance is unpaid and overdue
+   - Input: Credit card number, due date, contact details
+   - Expected Output: Status code 200, Confirmation message "Call arranged successfully"
+   - Edge Case: Invalid input provided, Expected Output: Status code 400, Error message "Invalid input provided"
+
+3. Test Case: Verify updating card balance upon successful payment
+   - Input: Payment amount, credit card number
+   - Expected Output: Status code 200, Confirmation message "Card balance updated"
+   - Edge Case: Payment processing error, Expected Output: Status code 400, Error message "Payment processing error"
+
+
+NON-FUNCTIONAL TEST CASES:
+
+1. Test Case: Check response time of GET request to "/api/creditCard/details"
+   - Expected Output: Response time should be within acceptable limits defined by the business
+
+2. Test Case: Check response time of POST request to "/api/creditCard/checkBalance"
+   - Expected Output: Response time should be within acceptable limits defined by the business
+
+3. Test Case: Check response time of POST request to "/api/creditCard/payment"
+   - Expected Output: Response time should be within acceptable limits defined by the business
+
+4. Test Case: Verify system's ability to handle multiple simultaneous requests
+   - Expected Output: System should be able to handle multiple requests without crashing or slowing down significantly
+
+5. Test Case: Verify system's security by attempting unauthorized access to the credit card details
+   - Expected Output: System should prevent unauthorized access and return appropriate error message.
