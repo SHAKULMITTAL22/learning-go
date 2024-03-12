@@ -1,0 +1,38 @@
+FUNCTIONAL TEST CASES
+
+1. Test Case: Validate the React component rendering
+   - Input: Load the application
+   - Expected Output: All components should render as expected without any errors
+   - Edge Case: Try loading the application with slow network speed and verify the components are still rendering correctly
+
+2. Test Case: Validate the state updates in React component
+   - Input: Perform an action that should change the state of a component (e.g., click a button)
+   - Expected Output: Component's state should be updated as per the action performed
+   - Edge Case: Try performing an action that should not change the state and verify that the state remains unchanged
+
+3. Test Case: Validate the props passing between React components
+   - Input: Pass props from a parent component to a child component
+   - Expected Output: Child component should receive and use the props as expected
+   - Edge Case: Try passing invalid or unexpected props and verify that the child component handles it correctly
+
+NON-FUNCTIONAL TEST CASES
+
+1. Test Case: Validate the application load time
+   - Input: Load the application
+   - Expected Output: Application should load within acceptable time limits
+   - Edge Case: Try loading the application with slow network speed and verify the load time
+
+2. Test Case: Validate the application responsiveness
+   - Input: Use the application on different screen sizes
+   - Expected Output: Application should respond and adapt to different screen sizes without any issues
+   - Edge Case: Try using the application on extremely small or large screen sizes and verify the responsiveness
+
+3. Test Case: Validate the application's browser compatibility
+   - Input: Use the application on different browsers
+   - Expected Output: Application should work as expected on all supported browsers
+   - Edge Case: Try using the application on unsupported browsers and verify the compatibility
+
+4. Test Case: Validate the application's performance under high load
+   - Input: Simulate multiple users using the application simultaneously
+   - Expected Output: Application should handle the load without crashing or slowing down significantly
+   - Edge Case: Try simulating an extremely high number of users to identify the breaking point of the application.

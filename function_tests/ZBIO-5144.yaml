@@ -1,0 +1,86 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: 'React Component Rendering API'
+  description: 'API for testing React component rendering under normal and slow network conditions'
+host: 'localhost:3000'
+basePath: '/'
+schemes:
+  - 'http'
+paths:
+  /application:
+    get:
+      summary: 'Load the application'
+      description: 'Endpoint to load the application and test the rendering of React components under normal and slow network conditions.'
+      responses:
+        '200':
+          description: 'Components rendered successfully without any errors'
+          schema:
+            type: 'object'
+            properties:
+              status:
+                type: 'string'
+                example: 'success'
+              message:
+                type: 'string'
+                example: 'All components rendered as expected without any errors'
+        '400':
+          description: 'Bad Request. Invalid request made.'
+          schema:
+            type: 'object'
+            properties:
+              status:
+                type: 'string'
+                example: 'failure'
+              message:
+                type: 'string'
+                example: 'Invalid request.'
+        '500':
+          description: 'Server Error. Components not rendered properly.'
+          schema:
+            type: 'object'
+            properties:
+              status:
+                type: 'string'
+                example: 'failure'
+              message:
+                type: 'string'
+                example: 'Components not rendered properly.'
+  /application/slow-network:
+    get:
+      summary: 'Simulate slow network speed'
+      description: 'Endpoint to simulate slow network speed and test the rendering of React components.'
+      responses:
+        '200':
+          description: 'Components rendered successfully under slow network conditions'
+          schema:
+            type: 'object'
+            properties:
+              status:
+                type: 'string'
+                example: 'success'
+              message:
+                type: 'string'
+                example: 'All components rendered correctly under slow network conditions'
+        '400':
+          description: 'Bad Request. Invalid request made.'
+          schema:
+            type: 'object'
+            properties:
+              status:
+                type: 'string'
+                example: 'failure'
+              message:
+                type: 'string'
+                example: 'Invalid request.'
+        '500':
+          description: 'Server Error. Components not rendered properly under slow network conditions.'
+          schema:
+            type: 'object'
+            properties:
+              status:
+                type: 'string'
+                example: 'failure'
+              message:
+                type: 'string'
+                example: 'Components not rendered properly under slow network conditions.'
