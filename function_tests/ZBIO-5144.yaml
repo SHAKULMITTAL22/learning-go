@@ -1,0 +1,51 @@
+Scenario: User submits a form to update their information
+
+Given the user is logged in to their account
+When they choose to edit their information
+And they submit the form with the updated information
+Then the system should update the user's information
+And the user is notified of the successful update
+
+API Specification:
+
+1. Endpoint: `PUT /api/v1/users/{userId}`
+
+2. Request Body:
+```json
+{
+  "firstName": "string",
+  "lastName": "string",
+  "email": "string",
+  "password": "string",
+  "phoneNumber": "string"
+}
+```
+3. Path Parameters:
+   - `userId` (required): The unique identifier of the user.
+
+4. Request Headers:
+   - `Authorization`: Bearer {access_token}
+
+5. Response Body:
+```json
+{
+  "message": "User information updated successfully",
+  "data": {
+    "id": "string",
+    "firstName": "string",
+    "lastName": "string",
+    "email": "string",
+    "phoneNumber": "string",
+    "updatedAt": "datetime"
+  }
+}
+```
+
+6. Error Responses:
+   - Status 400: Bad Request (If the request body is not valid)
+   - Status 401: Unauthorized (If the user is not authenticated)
+   - Status 404: Not Found (If the user does not exist)
+   - Status 500: Internal Server Error (For any server-side error)
+
+7. Description:
+This API is used to update the information of a user. It requires the user to be authenticated. The user sends a PUT request to the `/api/v1/users/{userId}` endpoint with their updated information. The system then updates the user's information and returns a success message along with the updated user data.

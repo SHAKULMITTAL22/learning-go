@@ -1,0 +1,69 @@
+Functional Test Cases:
+--------------------------
+
+1. Test Case for Repository Details:
+   - Input: Repository details provided by the HSBC team including source code and requirements.
+   - Expected Result: The repository details should be correctly provided and accessible.
+   - Edge Case: Verify what happens if incorrect repository details are provided.
+
+2. Test Case for API's:
+   - Input: APIs exposed at the HSBC Developer Portal.
+   - Expected Result: APIs should be accessible and return expected data.
+   - Edge Case: Test the API responses for error conditions, what happens when invalid API request is sent.
+
+Non-Functional Test Cases:
+------------------------------
+
+1. Test Case for System Performance:
+   - Input: Multiple concurrent requests to the API's.
+   - Expected Result: The system should handle multiple requests efficiently without any performance degradation.
+   - Edge Case: Test the system's behavior under extreme load conditions.
+
+2. Test Case for Security:
+   - Input: Various API requests with potential security threats like SQL Injection, Cross-Site Scripting, etc.
+   - Expected Result: The system should not be susceptible to any security threats and should handle such requests appropriately.
+   - Edge Case: Test the system's response to an unknown threat.
+
+Unit Test Cases:
+-------------------
+
+1. Test Case for Individual API's:
+   - Input: Single API request.
+   - Expected Result: The API should return the correct response for the given request.
+   - Edge Case: Test the API's behavior with invalid request data.
+
+API Integration Test Cases:
+---------------------------------
+
+1. Test Case for API Integration:
+   - Input: Multiple API requests that involve integration between them.
+   - Expected Result: The API's should work together correctly and provide the expected output.
+   - Edge Case: Test the API's behavior when one of the integrated API fails.
+
+Note: For TDD approach, start with writing test cases based on the requirements. Then, implement the code to pass these test cases. Refactor the code if necessary, ensuring the test cases still pass. Iterate this process for each new feature or functionality.
+
+GHERKIN FILE :
+Feature: Testing Repository Details
+Scenario: Testing HTTP GET method for fetching repository details
+Given the API base URL 'http://localhost:3000'
+When I send a GET request to '/repository-details'
+Then the response status code should be 200
+And the response should contain 'repository details'
+
+Scenario: Testing HTTP GET method for fetching repository details with incorrect details
+Given the API base URL 'http://localhost:3000'
+When I send a GET request to '/repository-details-invalid'
+Then the response status code should be 404
+
+GHERKIN FILE :
+Feature: Testing APIs
+Scenario: Testing HTTP GET method for fetching API details
+Given the API base URL 'http://localhost:3000'
+When I send a GET request to '/api-details'
+Then the response status code should be 200
+And the response should contain 'API details'
+
+Scenario: Testing HTTP GET method for fetching API details with incorrect details
+Given the API base URL 'http://localhost:3000'
+When I send a GET request to '/api-details-invalid'
+Then the response status code should be 404
