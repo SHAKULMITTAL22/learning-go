@@ -1,0 +1,46 @@
+FUNCTIONAL TEST CASES:
+
+1. Test Case: Verify fetching credit card details
+   - Input: Valid credit card number
+   - Expected Output: Status code 200, Credit card details including due date and balance
+   - Edge Case: Invalid credit card number, Expected Output: Status code 400, Error message "Invalid credit card details provided"
+
+2. Test Case: Verify arranging a call if balance is unpaid and overdue
+   - Input: Credit card number, due date, contact details
+   - Expected Output: Status code 200, Message "Call arranged successfully"
+   - Edge Case: Invalid input, Expected Output: Status code 400, Error message "Invalid input provided"
+
+3. Test Case: Verify updating card balance after payment is collected
+   - Input: Payment amount, credit card number
+   - Expected Output: Status code 200, Message "Card balance updated"
+   - Edge Case: Payment processing error, Expected Output: Status code 400, Error message "Payment processing error"
+
+NON-FUNCTIONAL TEST CASES:
+
+1. Test Case: Verify system performance under load
+   - Input: Multiple simultaneous requests to fetch credit card details
+   - Expected Output: Consistent response times, no system crashes
+
+2. Test Case: Verify system security
+   - Input: Unauthorized request to fetch credit card details
+   - Expected Output: Status code 403, Error message "Unauthorized access"
+
+3. Test Case: Verify system availability
+   - Input: Request to fetch credit card details at any time
+   - Expected Output: Status code 200, Credit card details
+
+4. Test Case: Verify data integrity
+   - Input: Request to update card balance after payment
+   - Expected Output: Updated balance should reflect accurately in the system
+
+5. Test Case: Verify system's ability to recover from failure
+   - Input: Simulate a server crash and restart
+   - Expected Output: System should recover and function normally post-recovery
+
+6. Test Case: Verify system scalability
+   - Input: Increasing number of requests to fetch credit card details
+   - Expected Output: System should be able to handle increased load without performance degradation
+
+7. Test Case: Verify system usability
+   - Input: User interfaces and workflows
+   - Expected Output: Interfaces should be intuitive and workflows smooth for end users.
