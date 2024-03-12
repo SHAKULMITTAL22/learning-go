@@ -1,0 +1,41 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: API Endpoint Testing
+  description: A specification for the testing of API endpoints
+schemes:
+  - https
+paths:
+  /correct-endpoint:
+    get:
+      summary: Send a request to the correct API endpoint
+      description: This endpoint validates that a request to the correct API endpoint returns a status of 200
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: 'Request successful'
+  /incorrect-endpoint:
+    get:
+      summary: Send a request to an incorrect API endpoint
+      description: This endpoint validates that a request to an incorrect API endpoint returns a status of 404
+      responses:
+        '404':
+          description: Endpoint not found
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: 'Endpoint not found'
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+security:
+  - Bearer: []
