@@ -1,0 +1,53 @@
+Scenario: User submits a form to update their information
+
+Given the user is authenticated
+And the user is on the "Update Information" page
+When the user fills out the form with their new information
+And the user clicks on the "Update Information" button
+Then the system should send an API request to update the user's information
+And the user should receive a confirmation message that their information has been updated successfully
+
+API-Spec:
+
+Endpoint: PUT /users/{id}/information
+Authorization: Bearer {token}
+
+Request Body:
+{
+  "firstName": "string",
+  "lastName": "string",
+  "email": "string",
+  "phoneNumber": "string",
+  "address": {
+    "street": "string",
+    "city": "string",
+    "state": "string",
+    "zip": "string"
+  }
+}
+
+Response: 
+Status: 200 OK
+Body: 
+{
+  "message": "User information has been updated successfully"
+}
+
+Error Response:
+Status: 400 Bad Request
+Body:
+{
+  "message": "Failed to update user information. Please verify your input."
+}
+
+Status: 401 Unauthorized
+Body:
+{
+  "message": "You are not authorized to update this user's information."
+}
+
+Status: 404 Not Found
+Body:
+{
+  "message": "User not found."
+}
