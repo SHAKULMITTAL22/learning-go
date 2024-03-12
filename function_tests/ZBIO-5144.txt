@@ -1,0 +1,139 @@
+FUNCTIONAL TEST CASE:
+Functional Test Cases:
+--------------------------
+
+1. Test Case for Repository Details:
+   - Input: Repository details provided by the HSBC team including source code and requirements.
+   - Expected Result: The repository details should be correctly read and understood by the system, and the source code should compile without errors.
+   - Edge Case: Test with invalid or incomplete repository details.
+
+2. Test Case for API Integration:
+   - Input: APIs exposed at the HSBC Developer Portal.
+   - Expected Result: The APIs should be accessible and return the correct responses as per the API specifications.
+   - Edge Case: Test with invalid API endpoints or APIs that are not available.
+
+3. Test Case for Cards – Collections & Recovery Functionality:
+   - Input: Actions related to Cards – Collections & Recovery functionality.
+   - Expected Result: The actions should be executed correctly, and the system should respond as per the requirements.
+   - Edge Case: Test with invalid actions or data.
+
+4. Test Case for TDD:
+   - Input: Functional Test Cases from Requirements and Source Code.
+   - Expected Result: The system should be able to generate test specs based on the functional test cases and source code.
+   - Edge Case: Test with incomplete or invalid functional test cases or source code.
+
+Non-Functional Test Cases:
+------------------------------
+
+1. Test Case for System Performance:
+   - Input: High load or stress conditions.
+   - Expected Result: The system should be able to handle high loads or stress conditions without significant performance degradation.
+   - Edge Case: Test with extremely high loads or stress conditions that exceed the system's capacity.
+
+2. Test Case for API Response Time:
+   - Input: API requests.
+   - Expected Result: The APIs should return responses within an acceptable time frame as per the API specifications.
+   - Edge Case: Test with large amounts of data that may slow down the response time.
+
+3. Test Case for System Security:
+   - Input: Various security threats or attacks.
+   - Expected Result: The system should be able to withstand various security threats or attacks without compromising the system's integrity.
+   - Edge Case: Test with sophisticated security threats or attacks that may bypass common security measures.
+
+4. Test Case for System Availability:
+   - Input: Various operating conditions.
+   - Expected Result: The system should be available for use under various operating conditions.
+   - Edge Case: Test with extreme operating conditions that may cause the system to be unavailable. 
+
+5. Test Case for Mockito Virtualisation:
+   - Input: Dependencies that need to be virtualised/mocked.
+   - Expected Result: Mockito should be able to correctly virtualise/mock the dependencies.
+   - Edge Case: Test with complex dependencies that may be difficult to virtualise/mock. 
+
+GHERKIN FILE :
+Feature: Functional Testing
+  Scenario Outline: Repository Details
+    Given the system has repository details "<repository_details>"
+    When the system reads and understands the repository details
+    Then the source code should compile without errors
+    Examples:
+      | repository_details |
+      | Valid details |
+      | Invalid details |
+      | Incomplete details |
+
+  Scenario Outline: API Integration
+    Given the system has APIs exposed at the HSBC Developer Portal "<api>"
+    When the system accesses the APIs
+    Then the APIs should return the correct responses as per the API specifications
+    Examples:
+      | api |
+      | Valid API endpoints |
+      | Invalid API endpoints |
+      | Unavailable API endpoints |
+
+  Scenario Outline: Cards – Collections & Recovery Functionality
+    Given the system has actions related to Cards – Collections & Recovery functionality "<actions>"
+    When the system executes the actions
+    Then the actions should be executed correctly and the system should respond as per the requirements
+    Examples:
+      | actions |
+      | Valid actions |
+      | Invalid actions |
+      | Invalid data |
+
+  Scenario Outline: TDD
+    Given the system has functional Test Cases from Requirements and Source Code "<test_cases>"
+    When the system generates test specs based on the functional test cases and source code
+    Then the system should be able to generate test specs correctly
+    Examples:
+      | test_cases |
+      | Complete test cases |
+      | Incomplete test cases |
+      | Invalid test cases |
+
+Feature: Non-Functional Testing
+  Scenario Outline: System Performance
+    Given the system is under high load or stress conditions "<conditions>"
+    When the system operates under these conditions
+    Then the system should be able to handle these conditions without significant performance degradation
+    Examples:
+      | conditions |
+      | High loads |
+      | Extremely high loads |
+
+  Scenario Outline: API Response Time
+    Given the system has API requests "<requests>"
+    When the system processes these requests
+    Then the APIs should return responses within an acceptable time frame as per the API specifications
+    Examples:
+      | requests |
+      | Regular data |
+      | Large amounts of data |
+
+  Scenario Outline: System Security
+    Given the system is exposed to various security threats or attacks "<threats>"
+    When the system operates under these threats
+    Then the system should be able to withstand these threats without compromising the system's integrity
+    Examples:
+      | threats |
+      | Regular threats |
+      | Sophisticated threats |
+
+  Scenario Outline: System Availability
+    Given the system operates under various operating conditions "<conditions>"
+    When the system is used under these conditions
+    Then the system should be available for use
+    Examples:
+      | conditions |
+      | Regular conditions |
+      | Extreme conditions |
+
+  Scenario Outline: Mockito Virtualisation
+    Given the system has dependencies that need to be virtualised/mocked "<dependencies>"
+    When Mockito virtualises/mocks these dependencies
+    Then Mockito should be able to correctly virtualise/mock the dependencies
+    Examples:
+      | dependencies |
+      | Regular dependencies |
+      | Complex dependencies |
