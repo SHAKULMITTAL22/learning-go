@@ -1,0 +1,56 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: Functional Test Cases API
+  description: An API to handle Functional Test Cases from Requirements
+
+host: localhost:8080
+basePath: /
+
+schemes:
+  - http
+
+paths:
+  /api/test-cases:
+    post:
+      summary: Send Functional Test Cases
+      description: Send Functional Test Cases to the server
+      parameters:
+        - in: body
+          name: test-cases
+          description: The Functional Test Cases to submit
+          required: true
+          schema:
+            $ref: '#/definitions/FunctionalTestCase'
+      responses:
+        '200':
+          description: The Functional Test Cases were submitted successfully
+          schema:
+            $ref: '#/definitions/TestSpecResponse'
+        '400':
+          description: The Functional Test Cases submission was incorrect
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+
+definitions:
+  FunctionalTestCase:
+    type: object
+    properties:
+      testCaseId:
+        type: string
+      testCaseName:
+        type: string
+      testCaseDescription:
+        type: string
+  TestSpecResponse:
+    type: object
+    properties:
+      message:
+        type: string
+      data:
+        type: object
+  ErrorResponse:
+    type: object
+    properties:
+      message:
+        type: string
