@@ -1,0 +1,54 @@
+```yaml
+swagger: '2.0'
+info:
+  title: API Testing
+  description: API endpoints for testing
+  version: 1.0.0
+host: localhost:3000
+schemes:
+  - http
+paths:
+  /valid-endpoint:
+    get:
+      summary: Validate the API endpoints
+      responses:
+        '200':
+          description: Successful Response
+  /invalid-endpoint:
+    get:
+      summary: Validate the API endpoints
+      responses:
+        '404':
+          description: Endpoint not found
+  /test-cases:
+    post:
+      summary: Test the server response to correct Functional Test Cases from Requirements
+      parameters:
+        - in: body
+          name: testSpecs
+          description: Test specifications
+          required: true
+          schema:
+            type: object
+      responses:
+        '200':
+          description: Successful Response, correct test specs
+        '400':
+          description: Bad Request, incorrect test specs
+  /cards:
+    post:
+      summary: Test the functionality of Cards – Collections & Recovery
+      parameters:
+        - in: body
+          name: cardDetails
+          description: Card details
+          required: true
+          schema:
+            type: object
+      responses:
+        '200':
+          description: Successful Response, valid card details
+        '400':
+          description: Bad Request, invalid card details
+```
+This YAML file represents a Swagger file, which is a format for describing REST APIs. In this case, the Swagger file describes the base URL, paths, HTTP methods, responses, and other details of the API endpoints mentioned in the Gherkin scenarios. The Swagger file is structured and easy to read, making it a useful tool for both developing and testing APIs.
