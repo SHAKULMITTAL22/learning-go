@@ -1,0 +1,42 @@
+Before creating the functional test case, let's understand the concept. Functional testing is a type of software testing that validates the software system against the functional requirements/specifications. The purpose is to check whether your product meets the intended functional specifications and involves black box testing.
+
+To create a functional test case, we would need the following:
+
+1. Test Case ID: Unique identifier for each test case.
+2. Test Case Description: Detailed information about what needs to be tested.
+3. Precondition: Requirements or conditions that must be met before the test can be run.
+4. Test Steps: Detailed steps to follow to execute the test.
+5. Test Data: Any necessary data needed for testing.
+6. Expected Result: The expected outcome of the test.
+7. Actual Result: The actual outcome of the test.
+8. Status: Pass or Fail.
+9. Post Condition: The final state of the software after the test has been run.
+10. Comments: Any additional information or issues encountered during testing.
+
+Here's an example of a functional test case:
+
+Test Case ID: TC001
+
+Test Case Description: Test the login functionality.
+
+Precondition: The user must have a valid username and password.
+
+Test Steps:
+1. Launch the application.
+2. Enter the valid username in the username field.
+3. Enter the valid password in the password field.
+4. Click the 'Login' button.
+
+Test Data: 
+Username: TestUser
+Password: Test@123
+
+Expected Result: The user should be successfully logged in and the dashboard should appear.
+
+Actual Result: To be filled after test execution.
+
+Status: To be filled after test execution.
+
+Post Condition: User is logged in and dashboard is displayed.
+
+Comments: To be filled after test execution.
