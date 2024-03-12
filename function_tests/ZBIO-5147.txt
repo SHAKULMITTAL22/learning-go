@@ -1,0 +1,42 @@
+FUNCTIONAL TEST CASES:
+
+1. Test Case: Verify fetching all React components
+   - Input: No input required
+   - Expected Output: Status code 200, List of all React components
+   - Edge Case: No React components available, Expected Output: Status code 200, Empty list
+
+2. Test Case: Verify fetching details of a specific React component
+   - Input: Component name
+   - Expected Output: Status code 200, Details of the specified component
+   - Edge Case: Component name not found, Expected Output: Status code 404, Error message "Component not found"
+
+3. Test Case: Verify creation of a new React component
+   - Input: Component details
+   - Expected Output: Status code 201, Confirmation message "Component created successfully"
+   - Edge Case: Invalid component details, Expected Output: Status code 400, Error message "Invalid component details"
+
+NON-FUNCTIONAL TEST CASES:
+
+1. Test Case: Check response time of GET request to fetch all React components
+   - Expected Output: Response time should be within acceptable limits defined by the business
+
+2. Test Case: Check response time of GET request to fetch a specific React component
+   - Expected Output: Response time should be within acceptable limits defined by the business
+
+3. Test Case: Check response time of POST request to create a new React component
+   - Expected Output: Response time should be within acceptable limits defined by the business
+
+4. Test Case: Verify system's ability to handle multiple simultaneous requests
+   - Expected Output: System should be able to handle multiple requests without crashing or slowing down significantly
+
+5. Test Case: Verify system's security by attempting unauthorized access to the React components
+   - Expected Output: System should prevent unauthorized access and return appropriate error message.
+
+GHERKIN FILE:
+
+Feature: Testing API that interacts with React JS application
+Scenario: Get all React components
+Given the API base URL 'http://localhost:3000'
+When I send a GET request to '/react-app-components'
+Then the response status should be 200
+And the response should contain 'component details'
