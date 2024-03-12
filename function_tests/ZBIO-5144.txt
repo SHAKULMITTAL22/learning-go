@@ -1,0 +1,51 @@
+FUNCTIONAL TEST CASE:
+Functional Test Cases:
+--------------------------
+
+1. Test Case for HTTP GET method:
+   - Input: GET request to '/react-app-components' endpoint.
+   - Expected Result: The API should return a 200 status code along with the component details.
+   - Edge Case: Test with invalid endpoint or when the server is down.
+
+NON-FUNCTIONAL TEST CASE:
+Non-Functional Test Cases:
+--------------------------
+
+1. Test Case for API Response Time:
+   - Input: GET request to '/react-app-components' endpoint.
+   - Expected Result: The API should return the response within an acceptable time frame.
+   - Edge Case: Test with high network latency or server load.
+
+2. Test Case for API Security:
+   - Input: Various security threats or attacks.
+   - Expected Result: The API should be able to withstand various security threats or attacks without compromising the data.
+   - Edge Case: Test with sophisticated security threats or attacks that may bypass common security measures.
+
+GHERKIN FILE :
+Feature: Testing API that interacts with React JS application
+
+Scenario: Testing HTTP GET method
+  Given the API base URL 'http://localhost:3000' 
+  When I send a GET request to '/react-app-components'
+  Then the response status should be 200
+  And the response should contain 'component details'
+
+Scenario Outline: Testing API Response Time
+  Given the API base URL 'http://localhost:3000' 
+  When I send a GET request to '/react-app-components' under high network latency or server load
+  Then the API should return the response within an acceptable time frame
+  Examples:
+    | network latency | server load |
+    | High            | High        |
+    | Low             | High        |
+    | High            | Low         |
+
+Scenario Outline: Testing API Security
+  Given the API base URL 'http://localhost:3000' 
+  When I send a GET request to '/react-app-components' under various security threats or attacks
+  Then the API should withstand these threats without compromising the data
+  Examples:
+    | security threats |
+    | XSS Attack       |
+    | CSRF Attack      |
+    | SQL Injection    |
