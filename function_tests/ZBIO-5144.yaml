@@ -1,0 +1,31 @@
+openapi: 3.0.0
+info:
+  title: API endpoints validation
+  version: 1.0.0
+servers:
+  - url: https://correct-api-base-url.com
+paths:
+  /endpoint:
+    get:
+      summary: Testing correct API endpoint
+      responses:
+        '200':
+          description: Successful response
+        '404':
+          description: Endpoint not found
+  - url: https://incorrect-api-base-url.com
+paths:
+  /endpoint:
+    get:
+      summary: Testing incorrect API endpoint
+      responses:
+        '404':
+          description: Endpoint not found
+security:
+  - api_key: []
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header

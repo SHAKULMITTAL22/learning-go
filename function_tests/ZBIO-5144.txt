@@ -1,0 +1,39 @@
+Based on the user story provided, here are the functional and non-functional test cases:
+
+Functional Test Cases:
+
+1. Test Case: Validate the API endpoints
+   - Input: Correct API endpoint as per the specification
+   - Expected Output: Response status should be 200
+   - Edge Case: Try with incorrect API endpoint and expect status 404
+
+2. Test Case: Test the server response to correct Functional Test Cases from Requirements
+   - Input: Correct Functional Test Cases from Requirements
+   - Expected Output: Response status should be 200 and should display the correct test specs
+   - Edge Case: Try with incorrect Functional Test Cases from Requirements and expect status 400 and an error message
+
+3. Test Case: Test the functionality of Cards – Collections & Recovery
+   - Input: Valid card details for collection and recovery
+   - Expected Output: Correct response as per the business logic and status 200
+   - Edge Case: Try with invalid card details and expect an error message with appropriate status code
+
+Non-Functional Test Cases:
+
+1. Test Case: Test the system performance under load
+   - Input: Simulate high load on the system by sending multiple simultaneous requests
+   - Expected Output: System should be able to handle the load without crashing or slowing down significantly
+   - Edge Case: Try with extremely high load to identify the breaking point of the system
+
+2. Test Case: Test the system resilience
+   - Input: Simulate failures in dependent APIs or services
+   - Expected Output: System should be able to handle failures gracefully without crashing
+   - Edge Case: Try with multiple simultaneous failures to test the system's robustness
+
+3. Test Case: Test the system security
+   - Input: Attempt to access sensitive data or functionalities without proper authentication
+   - Expected Output: System should not allow unauthorized access and should return appropriate error messages
+   - Edge Case: Try with different types of attacks like SQL injection, Cross-Site Scripting (XSS), etc. to test the system's vulnerability
+
+4. Test Case: Test system compatibility
+   - Input: Send requests from different platforms and devices
+   - Expected Output: System should be able to handle requests from
