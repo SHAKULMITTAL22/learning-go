@@ -1,0 +1,47 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Credit Card API
+  description: API for managing credit card details
+servers:
+  - url: https://api.example.com
+
+paths:
+  /credit-card-details:
+    get:
+      summary: Fetch Credit Card Details
+      description: Fetches the credit card details based on the card number
+      parameters:
+        - name: cardNumber
+          in: query
+          required: true
+          schema:
+            type: string
+            format: creditCardNumber
+          description: The credit card number to fetch the details for
+      responses:
+        '200':
+          description: Credit card details fetched successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  dueDate:
+                    type: string
+                    format: date-time
+                    description: The due date for the next payment
+                  balance:
+                    type: number
+                    format: float
+                    description: The current balance on the credit card
+        '400':
+          description: Bad request, possibly due to invalid credit card number
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating the reason for the failure

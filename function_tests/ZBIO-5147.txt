@@ -1,0 +1,44 @@
+Functional Test Cases
+===================
+
+1. Test Case: Fetch Credit Card Details
+   - Input: A valid credit card number
+   - Expected Output: Successful response with credit card due date and balance
+   - Edge Case: Invalid or non-existent credit card number should return error message
+
+2. Test Case: Arrange Call for Overdue Balance
+   - Input: Unpaid and overdue credit card balance, due date, and contact details
+   - Expected Output: Successful response indicating a call has been arranged
+   - Edge Case: Missing or invalid contact details should return error message
+
+3. Test Case: Update Card Balance Post Payment
+   - Input: Payment status
+   - Expected Output: Successful response and updated card balance
+   - Edge Case: No payment status or unsuccessful payment should return error message
+
+Non-Functional Test Cases
+=====================
+
+1. Test Case: API Response Time
+   - Input: Any valid API request
+   - Expected Output: Response time should be within acceptable limits defined by performance requirements
+
+2. Test Case: API Load Handling
+   - Input: Multiple simultaneous API requests
+   - Expected Output: All requests should be handled without server error
+
+3. Test Case: API Security
+   - Input: API request with invalid or missing authentication
+   - Expected Output: API should return an unauthorized access error
+
+4. Test Case: API Availability
+   - Input: Any valid API request
+   - Expected Output: API should be available 99.99% of the time
+
+5. Test Case: API Data Integrity
+   - Input: API request for fetching credit card details
+   - Expected Output: API should return accurate and current data, and not outdated or corrupted data
+
+6. Test Case: API Error Messages
+   - Input: API request with missing required parameters
+   - Expected Output: API should return a legible and specific error message indicating what is wrong with the request.
