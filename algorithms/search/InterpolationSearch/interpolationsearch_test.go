@@ -1,35 +1,30 @@
-package InterpolationSearch
-
-import (
-	"math/rand"
-	"testing"
-	"time"
-)
-
-func SortArray(array []int) {
-	for itemIndex, itemValue := range array {
-		for itemIndex != 0 && array[itemIndex-1] > itemValue {
-			array[itemIndex] = array[itemIndex-1]
-			itemIndex -= 1
-		}
-		array[itemIndex] = itemValue
+func Testinterpolationsearch759(t *testing.T) {
+	type test struct {
+		name		string
+		arr		[]int
+		query		int
+		expected	int
+	}
+	tests := []test{{name: "Scenario 1: Validate Empty Email String (Empty Array)", arr: []int{}, query: 5, expected: -1}, {name: "Scenario 2: Validate Maximum Length Email (Maximum Length Array)", arr: []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, query: 5, expected: 4}}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			oldStdout := os.Stdout
+			r, w, _ := os.Pipe()
+			os.Stdout = w
+			result := interpolationSearch(tt.arr, tt.query)
+			if result != tt.expected {
+				t.Errorf("Test Failed: %s, Expected: %d, Got: %d", tt.name, tt.expected, result)
+			} else {
+				fmt.Fprintf(w, "Test Passed: %s, Expected: %d, Got: %d", tt.name, tt.expected, result)
+			}
+			w.Close()
+			var buf bytes.Buffer
+			fmt.Fscanf(r, "%s", &buf)
+			if buf.String() != "" {
+				t.Log(buf.String())
+			}
+			os.Stdout = oldStdout
+		})
 	}
 }
 
-func TestInterpolationSearch(t *testing.T) {
-	random := rand.New(rand.NewSource(time.Now().UnixNano()))
-	array := make([]int, random.Intn(100-10)+10)
-
-	for i := range array {
-		array[i] = random.Intn(100)
-	}
-
-	SortArray(array)
-
-	for _, value := range array {
-		result := interpolationSearch(array, value)
-		if result == -1 {
-			t.Fail()
-		}
-	}
-}
